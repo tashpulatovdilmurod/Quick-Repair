@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Quick Repair</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet"  href="main.css" th:href="@{/css/main.css}"/>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt-user">
+				<a href="#menu" style="color: rgb(133, 193, 233);">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Notifications</a></li>
+					<li><a href="user-applications.html">Applications</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section -->
+					<section class="wrapper style1">
+						<div class="inner">
+							<!-- 2 Columns -->
+								<div class="flex flex-2">
+									<div class="col col1">
+									<h1>Applications</h1>
+										<div class="container">
+											<table
+											class='table table-bordered table-condensed table-striped table-hover'>
+												<tr>
+													<th>Car</th>
+													<th>Location</th>
+													<th>Priority</th>
+													<th>Latitude</th>
+													<th>Longitude</th>
+													<th>Message</th>
+												</tr>
+												<tr th:each="item, iItem : ${repair.content}" 
+												class="table-row">
+													<td th:text="${item.car}" />
+													<td th:text="${item.location}" />
+													<td th:text="${item.priority}" />
+													<td th:text="${item.latitude}" />
+													<td th:text="${item.longitude}" />
+													<td th:text="${item.message}" />
+												</tr>
+											</table>
+										</div>
+									</div>
+								</div>
+						</div>
+					</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					</ul>
+					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+				</div>
+			</footer>
+
+				<!-- Scripts -->
+			<script th:src="@{/js/jquery.min.js}"></script>
+			<script th:src="@{/js/jquery.scrolly.min.js}"></script>
+			<script th:src="@{/js/jquery.scrollex.min.js}"></script>
+			<script th:src="@{/js/skel.min.js}"></script>
+			<script th:src="@{/js/util.js}"></script>
+			<script th:src="@{/js/main.js}"></script>
+
+	</body>
+	<!-- <script type="text/javascript">
+		$(document).ready(function($) {
+    $(".table-row").click(function() {
+        window.document.location = $(this).data("href");
+    });
+});
+	</script> -->
+</html>

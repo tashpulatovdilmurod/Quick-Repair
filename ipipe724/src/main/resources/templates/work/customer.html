@@ -1,0 +1,189 @@
+<html>
+	<head>
+		<title>Quick Repair</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet"  href="main.css" th:href="@{/css/main.css}"/>
+	</head>
+	<body>
+		<!-- Header -->
+			<header id="header" class="alt">
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="generic.html">Notifications</a></li>
+					<li><a th:href="@{/repair/requests(id=${id})}">Applications</a></li>
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<h1>Quick Repair</h1>
+						<p>Please Complete the form below<br />This information will be sended to your Insurance Company</p>
+					</header>
+					<a href="#main" class="button big scrolly">Create Form</a>
+				</div>
+			</section>
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section -->
+					<section class="wrapper style1">
+						<div class="inner">
+							<!-- 2 Columns -->
+								<div class="flex flex-2">
+									<div class="col col1">
+										<div class="image round fit">
+											<a href="generic.html" class="link">
+											<img th:src="@{/images/debeka_logo.png}" alt="" /></a>
+										</div>
+									</div>
+																			<h3>Form</h3>
+
+										<form autocomplete="off" action="#" th:action="@{/add/fastrepair/request}"
+												 method="post" class="form-horizontal"
+												role="form">
+												
+												
+												<input type="hidden" name="id" th:value="${id}" />
+												
+												
+											<div class="row uniform">
+												<div class="6u 12u$(xsmall)">
+													Location for repair:
+													<input type="text" name="location" id="name" value="" placeholder="Location" />
+												</div>
+												<!-- Break -->
+												<div class="12u$">
+													<div class="select-wrapper">
+													Select your broken part:
+														<select id="category" name="broken">
+															<option value="">Front door</option>
+															<option value="Manufacturing">Manufacturing</option>
+															<option value="Shipping">Shipping</option>
+															<option value="Administration">Administration</option>
+															<option value="Human Resources">Human Resources</option>
+														</select>
+													</div>
+												</div>
+												<!-- Break -->
+												<div class="4u 12u$(small)">
+													<input type="radio" id="priority-low" name="priority1">
+													<label for="priority-low">Low Priority</label>
+												</div>
+												<div class="4u 12u$(small)">
+													<input type="radio" id="priority-normal" name="priority2">
+													<label for="priority-normal">Normal Priority</label>
+												</div>
+												<div class="4u$ 12u$(small)">
+													<input type="radio" id="priority-high"  name="priority3">
+													<label for="priority-high">High Priority</label>
+												</div>
+												<!-- Break -->
+												<div class="6u 12u$(small)">
+													<b>Require a car</b>
+												</div>
+												<div class="6u$ 12u$(small)">
+													<input type="checkbox" id="human" name="car" >
+													<label for="human">Yes</label>
+												</div>
+												<!-- Break -->
+												<div class="12u$">
+													<textarea name="message" id="message" placeholder="Enter your Description" rows="6"></textarea>
+												</div>
+												<!-- Break -->
+												<div class="12u$">
+													<ul class="actions">
+														<li><input type="submit" value="Send Message" /></li>
+														<li><input type="reset" value="Reset" class="alt" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+								</div>
+						</div>
+					</section>
+
+
+				<!-- <!-- Section --> -->
+					<!-- <section class="wrapper style2"> -->
+						<!-- <div class="inner"> -->
+							<!-- <div class="flex flex-2"> -->
+								<!-- <div class="col col2"> -->
+									<!-- <h3>Suspendisse quis massa vel justo</h3> -->
+									<!-- <p>Etiam posuere hendrerit arcu, ac blandit nulla. Sed congue malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet, enim magna cursus auctor lacinia nunc ex blandit augue. Ut vitae neque fermentum, luctus elit fermentum, porta augue. Nullam ultricies, turpis at fermentum iaculis, nunc justo dictum dui, non aliquet erat nibh non ex.</p> -->
+									<!-- <p>Sed congue malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet, enim magna cursus auctor lacinia nunc ex blandit augue. Ut vitae neque fermentum, luctus elit fermentum, porta augue. Nullam ultricies, turpis at fermentum iaculis, nunc justo dictum dui, non aliquet erat nibh non ex. </p> -->
+									<!-- <a href="#" class="button">Learn More</a> -->
+								<!-- </div> -->
+								<!-- <div class="col col1 first"> -->
+									<!-- <div class="image round fit"> -->
+										<!-- <a href="generic.html" class="link"><img src="images/debeka_logo.png" alt="" /></a> -->
+									<!-- </div> -->
+								<!-- </div> -->
+							<!-- </div> -->
+						<!-- </div> -->
+					<!-- </section> -->
+
+				<!-- <!-- Section --> -->
+					<!-- <section class="wrapper style1"> -->
+						<!-- <div class="inner"> -->
+							<!-- <header class="align-center"> -->
+								<!-- <h2>Aliquam ipsum purus dolor</h2> -->
+								<!-- <p>Cras sagittis turpis sit amet est tempus, sit amet consectetur purus tincidunt.</p> -->
+							<!-- </header> -->
+							<!-- <div class="flex flex-3"> -->
+								<!-- <div class="col align-center"> -->
+									<!-- <div class="image round fit"> -->
+										<!-- <img src="images/debeka_logo.png" alt="" /> -->
+									<!-- </div> -->
+									<!-- <p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p> -->
+									<!-- <a href="#" class="button">Learn More</a> -->
+								<!-- </div> -->
+								<!-- <div class="col align-center"> -->
+									<!-- <div class="image round fit"> -->
+										<!-- <img src="images/debeka_logo.png" alt="" /> -->
+									<!-- </div> -->
+									<!-- <p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p> -->
+									<!-- <a href="#" class="button">Learn More</a> -->
+								<!-- </div> -->
+								<!-- <div class="col align-center"> -->
+									<!-- <div class="image round fit"> -->
+										<!-- <img src="images/debeka_logo.png" alt="" /> -->
+									<!-- </div> -->
+									<!-- <p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p> -->
+									<!-- <a href="#" class="button">Learn More</a> -->
+								<!-- </div> -->
+							<!-- </div> -->
+						<!-- </div> -->
+					<!-- </section> -->
+
+			<!-- </div> -->
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					</ul>
+					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script th:src="@{/js/jquery.min.js}"></script>
+			<script th:src="@{/js/jquery.scrolly.min.js}"></script>
+			<script th:src="@{/js/jquery.scrollex.min.js}"></script>
+			<script th:src="@{/js/skel.min.js}"></script>
+			<script th:src="@{/js/util.js}"></script>
+			<script th:src="@{/js/main.js}"></script>
+
+	</body>
+</html>

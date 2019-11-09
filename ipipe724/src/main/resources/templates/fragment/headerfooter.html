@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:fragment="header1">
+		<script>
+			function startTime() {
+			  var today = new Date();
+			  var h = today.getHours();
+			  var m = today.getMinutes();
+			  var s = today.getSeconds();
+			  m = checkTime(m);
+			  s = checkTime(s);
+			  document.getElementById('txt').innerHTML =
+			  h + ":" + m + ":" + s;
+			  var t = setTimeout(startTime, 500);
+			}
+			function checkTime(i) {
+			  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+			  return i;
+			}
+		</script>
+		<link rel="stylesheet" href="css.css" th:href="@{/css/css.css}">
+</head>
+
+<div th:fragment="top_menu" >
+	<div id="topLogoMain">
+				<div id="topLogoMainLeft">
+					<img th:src="@{/images/logo.jpg}" />
+				</div>
+				<div id="topLogoMainRight">
+					<h1 style="margin: 35px 0px 0px 200px;">ECLIPSE TRANSPORT LTD</h1>
+				</div>
+			</div>
+		
+			<div id="topBar"></div>
+			<div id="topNavigation">
+				<ul>
+				  <li><a class="active" href="/contracts">Contracts</a></li>
+				  <li><a href="/documents/requests">Shipping Order</a></li>
+				  <li><a href="/truckts/inside/now">Truck Status</a></li>
+				  
+				  <li sec:authorize="hasAuthority('SUPERVISER')" ><a href="/cutting/request/documents">Cutting Order</a></li>
+				  <li><a  href="/others">Other Order</a></li>
+				  <li sec:authorize="hasAuthority('ADMIN')"><a href="/locations">Locations</a></li>
+				  <li sec:authorize="hasAuthority('SUPERVISER')"><a href="/pipetypes">Inventory-Types</a></li>
+				  <li sec:authorize="hasAuthority('SUPERVISER')"><a href="/grades">Grades</a></li>
+				  <li><a href="/trucks">Trucks</a></li>
+				  <li sec:authorize="hasAuthority('MANAGER')" ><a href="/customers">Customers</a></li>
+				  <li sec:authorize="hasAuthority('ADMIN')"><a href="/users">Users</a></li>
+				</ul>
+			</div>
+			<div id="topBar"></div>
+			<div id="welcomeMain">
+				<div id="welcomeMainLeft">
+					<p>
+						<span sec:authorize="hasAuthority('ADMIN')" style="display: inline-block;"> Welcome: <span sec:authentication="name">User</span>
+						| <a th:href="@{/logout}">Sign Out</a>
+                		</span>
+					</p>
+				</div>
+				<div id="welcomeMainLeft" style="text-align:right;">
+					<p>
+						Current time: <span id="txt"></span>
+					</p>
+				</div>
+			</div>
+</div>
+
+
+<div th:fragment="footer">
+	<div class="row">
+		<div class="col-xs-12 blue_class">
+			<footer>
+				<center>
+					<p>7-24 IT Ltd 2017</p>
+				</center>
+			</footer>
+		</div>
+	</div>
+	<script src=""></script>
+</div>
+
+
+
+
+
+</body>
+</html>
